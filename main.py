@@ -140,6 +140,10 @@ if __name__ == "__main__":
 		renderer.renderMode = args.render_mode
 		renderer.size = args.size
 		renderer.setInteractiveNoiseThreshold(args.noise_treshold)
+
+		# white background
+		environment = renderer.classes.SettingsEnvironment.getInstanceOrCreate()
+		environment.bg_color = vray.AColor(1, 1, 1, 1)
 		
 		# For interactive or GPU rendering, set limit for the trace depth
 		settingsRTEngine=renderer.classes.SettingsRTEngine.getInstances()
